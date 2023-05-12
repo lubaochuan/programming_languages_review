@@ -93,7 +93,7 @@ In Scheme, as in many other functional programming languages, higher-order funct
 
 1. `map`: `map` is a higher-order function that takes a function and a list as arguments, and returns a new list obtained by applying the function to each element of the original list. For example:
 
-   ```
+   ```scheme
    (define (square x) (* x x))
    (map square '(1 2 3 4 5)) ; returns '(1 4 9 16 25)
    ```
@@ -102,7 +102,7 @@ In Scheme, as in many other functional programming languages, higher-order funct
 
 2. `filter`: `filter` is a higher-order function that takes a predicate function and a list as arguments, and returns a new list containing only the elements of the original list that satisfy the predicate. For example:
 
-   ```
+   ```scheme
    (define (even? x) (= (modulo x 2) 0))
    (filter even? '(1 2 3 4 5)) ; returns '(2 4)
    ```
@@ -111,7 +111,7 @@ In Scheme, as in many other functional programming languages, higher-order funct
 
 3. `compose`: `compose` is a higher-order function that takes two functions as arguments and returns a new function that applies the second function to the result of applying the first function. For example:
 
-   ```
+   ```scheme
    (define (square x) (* x x))
    (define (add-one x) (+ x 1))
    ((compose square add-one) 5) ; returns 36
@@ -177,7 +177,7 @@ The primary benefit of CPS is that it allows for more flexible control flow in a
 
 Here is an example of a function written in CPS in Scheme:
 
-```
+```scheme
 (define (factorial n k)
   (if (<= n 1)
       (k 1)
@@ -196,7 +196,7 @@ The second part of the example shows how to call the `factorial` function in CPS
 
 Here is another example of a function in CPS that demonstrates how CPS can simplify code:
 
-```
+```scheme
 (define (sum-list lst k)
   (if (null? lst)
       (k 0)
